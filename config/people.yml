@@ -1,0 +1,32 @@
+# Tiered contacts. Used by triage and research scripts to weight relevance.
+# Each entry maps to a people/<slug>.md file.
+
+tiers:
+  board:
+    - slug: example-chair
+      name: Example Chair
+      org: Example Co
+      notes: "Board chair, biweekly 1:1"
+
+  lps:
+    - slug: example-lp
+      name: Example LP
+      fund: Example Capital
+      stage: intro
+      notes: ""
+
+  portfolio:
+    - slug: example-founder
+      name: Example Founder
+      company: PortCo
+      notes: "Series A, next board Q2"
+
+  team:
+    - slug: example-teammate
+      name: Example Teammate
+      role: "Associate"
+
+  relationships:
+    - slug: example-person
+      name: Example Person
+      notes: "Long-time friend, connector"

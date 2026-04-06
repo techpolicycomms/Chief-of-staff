@@ -1,0 +1,32 @@
+# Example crontab. Adjust CHIEF_OF_STAFF_HOME and PYTHON to your paths.
+# Install with: crontab config/cron.example
+
+CHIEF_OF_STAFF_HOME=/absolute/path/to/chief-of-staff
+PYTHON=/absolute/path/to/chief-of-staff/.venv/bin/python
+
+# Morning brief — 9am
+0 9 * * *    cd $CHIEF_OF_STAFF_HOME && $PYTHON scripts/morning_brief.py
+
+# Meeting prep — every 15 min, scans next 75 min of calendar
+*/15 * * * * cd $CHIEF_OF_STAFF_HOME && $PYTHON scripts/meeting_prep.py
+
+# Meeting follow-through — pull new Granola notes
+*/30 * * * * cd $CHIEF_OF_STAFF_HOME && $PYTHON scripts/process_meetings.py
+
+# Email triage — every 20 min during working hours
+*/20 8-19 * * 1-5 cd $CHIEF_OF_STAFF_HOME && $PYTHON scripts/triage_email.py
+
+# Evening wrap — 6pm
+0 18 * * *   cd $CHIEF_OF_STAFF_HOME && $PYTHON scripts/evening_wrap.py
+
+# Task sweep — 10:30pm
+30 22 * * *  cd $CHIEF_OF_STAFF_HOME && $PYTHON scripts/task_sweep.py
+
+# Kaizen research — Friday 5pm
+0 17 * * 5   cd $CHIEF_OF_STAFF_HOME && $PYTHON scripts/kaizen_research.py
+
+# Weekly research digest — Sunday 8am
+0 8 * * 0    cd $CHIEF_OF_STAFF_HOME && $PYTHON scripts/research_digest.py
+
+# Backup — nightly at midnight
+0 0 * * *    cd $CHIEF_OF_STAFF_HOME && ./scripts/backup.sh

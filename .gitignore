@@ -1,0 +1,19 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Secrets and tokens
+config/secrets/
+*.token
+*.credentials.json
+gmail_token.json
+google_oauth.json
+
+# Local caches
+.cache/
+memory/.cache/
+
+# Don't commit per-session logs
+logs/

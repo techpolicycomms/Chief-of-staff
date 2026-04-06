@@ -1,0 +1,27 @@
+# Sources for the weekly research digest. Tiered so the digest can be
+# ordered by relevance to the user's current focus.
+
+x_accounts:
+  researchers:
+    - handle: karpathy
+    - handle: ylecun
+  vcs:
+    - handle: rsarver
+  founders: []
+  operators: []
+
+newsletters:
+  - name: Example Newsletter
+    url: https://example.com/rss
+    tier: vcs
+
+# Keywords that bump an item's score in the digest
+boost_keywords:
+  - claude code
+  - agent
+  - chief of staff
+  - ai assistant
+
+# Keywords that demote or drop
+demote_keywords:
+  - crypto pump
